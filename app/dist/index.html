@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Load Roboto Mono font from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>ArSubscribe</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="svg-container">
+        <div class="newsletter js-rollover" data-radius="50">
+          <svg viewBox="0 0 694 549" width="694" height="549">
+            <path id="animatedPath" d="M74.7,439.6c58.9,76.3,152.2,113.1,224.6,109C585.8,532.3,734.2,295,684.7,94.2C658.7-11.3,508.1-8.6,433.6,9.8C384.1,22,329.1,47.8,277.8,60.4c-42.5,10.5-90,7.2-130.4,17.1C60.4,99-21.1,201.9,4.9,307.6C16.7,355.3,45.2,401.4,74.7,439.6z"></path>
+          </svg>
+        </div>
+      </div>
+    <header class="relative z-50 mx-autopx-4 sm:px-6 lg:px-8 lg:pt-4">
+      <div class="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8 flex d-flex align-items-center">
+        <div class="mt-10 lg:mt-0 lg:grow lg:basis-0 xl:mt-10">
+          <a class="inline-block" href="/" style="text-decoration:none; color: black;">
+            <h1>ArSubscribe</h1>
+          </a>
+        </div>
+        <div style="margin-left: auto;">
+          <button id="connectButtonContainer" class="btn btn-primary btn-lg border-0 py-3">
+            <img src="https://arcode.studio/img/arconnect.13a81c04.png" width="32">
+            <span>ArConnect</span>
+          </button>
+          <div id="walletAddressContainer" style="display: none;">
+            <span id="walletAddress"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="newsletter js-rollover" data-radius="50">
+      <section class="subscription bg-white">
+        <div class="container">
+          <div class="subscription-wrapper">
+            <div class="d-flex subscription-content justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
+              <div class="col-lg-4 my-md-2 my-2">
+                <h3 class="flex-fill">Stay Informed </h3>
+                <p style="font-size: 0.85rem;">Get Real-time Email Notifications for Your On-Chain Transactions</p>
+              </div>
+              <form id="newsletterForm" action="#" class="row flex-fill">
+                <div class="col-lg-7 my-md-2 my-2">
+                  <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Your Email" name="email">
+                </div>
+                <div class="col-lg-5 my-md-2 my-2" style="display:flex">
+                  <button id="subscribe" type="submit" class="btn btn-primary btn-lg border-0 w-100">Subscribe Now</button>
+                </div>
+              </form>
+            </div>
+            <div>
+              <br />
+              <p style="font-size: 0.8rem;font-style:oblique;">Our protocol offers a seamless solution to keep you updated on your on-chain transactions. By subscribing to our notification system, you will receive instant email alerts whenever any transaction involving your wallet address occurs on the blockchain. Be in the know and take charge of your crypto activities with our user-friendly landing page that explains how our protocol works and why it's an essential tool for any blockchain enthusiast. Join today and never miss a beat in the world of decentralized finance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./main.js"></script>
+    </div>
+  </body>
+</html>

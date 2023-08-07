@@ -1,0 +1,6 @@
+.vscode
+node_modules
+package-lock.json
+dist/main.js.LICENSE.txt
+.DS_Store
+build
