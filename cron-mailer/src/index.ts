@@ -132,7 +132,7 @@ async function getAllSubscriptions(): Promise<ISubscriptionData[]> {
         const data = await arweave.api.get(id);
         const email = data.data.email;
         const address = data.data.address;
-        if (email.length > 8)
+        if (email!=null && email.length != null && email.length > 8)
           subscriptionData.push({id, email, address, owner});
       }
       catch(e) {
