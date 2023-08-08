@@ -7,6 +7,45 @@ The inspiration behind ArSubscribe's on-chain transaction notification system wa
 ## What it does
 ArSubscribe offers a seamless solution to keep users updated on their on-chain transactions. By subscribing to our notification system, users receive instant email alerts whenever any transaction involving their wallet address occurs on the blockchain. Our user-friendly landing page provides a clear and concise explanation of our protocol, illustrating why it's an indispensable tool for anyone engaged in blockchain and DeFi.
 
+## Build and Run
+Clone the repo using git
+```bash
+ $ git clone https://github.com/MuLx10/ArSubscribe
+```
+
+### Running ArSubscribe app
+1. To run the app locally, install dependencies and build the app.
+   ```bash
+   $ cd app
+   $ npm i
+   $ npm run build
+   ```
+2. Start the app and point the browser to [localhost:5000](http://localhost:5000)
+   ```bash
+   $ npm start
+   ```
+
+### Building the email service:
+The email service requires an email and password from which the email will be sent to subscribed users.
+
+1. Create an .env file in `cron-mailer` folder with the following properties:
+   ```bash
+   EMAIL_ID=<sender-email-id>
+   EMAIL_PASSWORD=<password>
+   ```
+2. Run build and start command to run the mailer service.
+   ```bash
+   $ cd cron mailer
+   $ npm i
+   $ npm run build && npm start
+   ```
+Hurray! The service is started.
+
+### Requirements:
+1. node.js (>=16.15.0)
+2. npm
+
+
 ## How we built it
 The development of ArSubscribe's on-chain transaction notification system involved several key steps:
 - **Subscription** - Using Arweave as DB the user subscription data is stored as wallet - email pair. It uses Arweave transactions with the support of `tags` to store the subscription data.
