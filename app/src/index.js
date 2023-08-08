@@ -116,7 +116,7 @@ async function subscribe() {
   let tx = await arweave.createTransaction({ data: subscriptionData});
 
   // add some custom tags to the transaction
-  tx.addTag('App-Name', 'App1')
+  tx.addTag('App-Name', 'ArSubscribe')
   tx.addTag('Content-Type', 'application/json')
   tx.addTag('Version', '1.0.0')
   tx.addTag('Type', 'post')
