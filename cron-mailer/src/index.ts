@@ -35,7 +35,7 @@ const subscriptionQuery = {
   query: `
     query {
       transactions(
-        tags: [{name: "App-Name", values: ["App1"]}]) 
+        tags: [{name: "App-Name", values: ["ArSubscribe"]}]) 
       {
         edges {
           node {
@@ -57,7 +57,7 @@ function getTransactionOwnerQuery(address: string) {
         first: 10,
         owners: ["`+address+`"],
         tags: [
-          { name: "App-Name", values: ["App1"], op: NEQ }
+          { name: "App-Name", values: ["ArSubscribe"], op: NEQ }
         ]
       ) {
         edges {
@@ -95,7 +95,7 @@ function getTransactionRecipientQuery(address: string) {
         first: 10,
         recipients: ["`+address+`"],
         tags: [
-          { name: "App-Name", values: ["App1"], op: NEQ }
+          { name: "App-Name", values: ["ArSubscribe"], op: NEQ }
         ]
       ) {
         edges {
