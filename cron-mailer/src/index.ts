@@ -1,5 +1,6 @@
 import Arweave from "arweave";
 import {createTransport} from 'nodemailer';
+import express from 'express';
 
 var cron = require('node-cron');
 require('dotenv').config()
@@ -238,3 +239,23 @@ cron.schedule('*/2 * * * *', () => {
   console.log('running a task every two minutes');
   main();
 });
+
+const app = express()
+app.get('/', (req, res) => {
+  res.send("Hi from ArSubscribe mailer service");
+})
+
+const port = process.env.port || 80;
+app.listen(port, function () {
+  console.log("Example app listening at %s", port)
+})
+
+setInterval(() => {
+  fetch('https://arsubscribe-cron.onrender.com')
+    .then(() => {
+      console.log('Pinged');
+    })
+    .catch((e) => {
+      console.log(e);
+    })
+}, INTERVAL*2);
