@@ -75,4 +75,4 @@ ArSubscribe is all about helping out blockchain fans with up-to-the-minute info 
 Snaps:
 ![image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/557/361/datas/original.png)
 ![image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/557/364/datas/original.png)
-![image](https://github.com/MuLx10/ArSubscribe/assets/23444642/7e2f853e-0d8b-4f6a-8b98-87fd3357a7f0)
+![259137707-7e2f853e-0d8b-4f6a-8b98-87fd3357a7f0](https://github.com/MuLx10/ArSubscribe/assets/23444642/87843623-8d88-4d84-a66c-db388468fefb)
