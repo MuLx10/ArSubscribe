@@ -55,10 +55,7 @@ function getTransactionOwnerQuery(address: string) {
     query {
       transactions(
         first: 10,
-        owners: ["`+address+`"],
-        tags: [
-          { name: "App-Name", values: ["ArSubscribe"], op: NEQ }
-        ]
+        owners: ["`+address+`"]
       ) {
         edges {
           node {
@@ -93,10 +90,7 @@ function getTransactionRecipientQuery(address: string) {
     query {
       transactions(
         first: 10,
-        recipients: ["`+address+`"],
-        tags: [
-          { name: "App-Name", values: ["ArSubscribe"], op: NEQ }
-        ]
+        recipients: ["`+address+`"]
       ) {
         edges {
           node {
