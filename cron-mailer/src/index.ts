@@ -175,7 +175,7 @@ function getMailTemplate(data: any) {
 }
 
 
-async function getAllEmails(allSubsriptions: ISubscriptionData[]) {
+async function getAllEmails(allSubsriptions: ISubscriptionData[], now: number) {
   const emails: { body: string; to: string; }[] = []
 
   for(let i=0;i<allSubsriptions.length;i++) {
@@ -193,7 +193,7 @@ async function getAllEmails(allSubsriptions: ISubscriptionData[]) {
       if (e.block) {
         const timestamp: number = e.block.timestamp;
         if (timestamp) {
-          const diff = Date.now()-timestamp*1000;
+          const diff = now-timestamp*1000;
           return diff <= INTERVAL;
         }
       }
@@ -212,8 +212,9 @@ async function getAllEmails(allSubsriptions: ISubscriptionData[]) {
 }
 
 async function main() {
+  const now = Date.now()
   const allSubsriptions = await getAllSubscriptions();
-  const emails = await getAllEmails(allSubsriptions);
+  const emails = await getAllEmails(allSubsriptions, now);
 
   console.log(allSubsriptions)
   console.log(emails.length)
