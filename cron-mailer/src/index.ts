@@ -13,7 +13,7 @@ interface ISubscriptionData {
   email: string;
 }
 
-const INTERVAL = 2*60*1000; // 2mins
+const INTERVAL = 5*60*1000; // 2mins
 const EMAIL_ID = process.env.EMAIL_ID
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 
@@ -55,7 +55,6 @@ function getTransactionOwnerQuery(address: string) {
     query: `
     query {
       transactions(
-        first: 10,
         owners: ["`+address+`"]
       ) {
         edges {
@@ -90,7 +89,6 @@ function getTransactionRecipientQuery(address: string) {
     query: `
     query {
       transactions(
-        first: 10,
         recipients: ["`+address+`"]
       ) {
         edges {
@@ -196,7 +194,7 @@ async function getAllEmails(allSubsriptions: ISubscriptionData[]) {
         const timestamp: number = e.block.timestamp;
         if (timestamp) {
           const diff = Date.now()-timestamp*1000;
-          return diff < INTERVAL;
+          return diff <= INTERVAL;
         }
       }
       return false;
@@ -217,6 +215,9 @@ async function main() {
   const allSubsriptions = await getAllSubscriptions();
   const emails = await getAllEmails(allSubsriptions);
 
+  console.log(allSubsriptions)
+  console.log(emails.length)
+
   emails.map(email => {
     const mailOptions = {
       from: EMAIL_ID,
@@ -235,8 +236,7 @@ async function main() {
   })
 }
 
-cron.schedule('*/2 * * * *', () => {
-  console.log('running a task every two minutes');
+cron.schedule('*/3 * * * *', () => {
   main();
 });
 
@@ -252,10 +252,10 @@ app.listen(port, function () {
 
 setInterval(() => {
   fetch('https://arsubscribe-cron.onrender.com')
-    .then(() => {
-      console.log('Pinged');
-    })
+    .then(() => {})
     .catch((e) => {
       console.log(e);
     })
-}, INTERVAL*2);
+}, INTERVAL);
+
+main();
